@@ -35,10 +35,11 @@ public class Hit : MonoBehaviour
         if (weapon == 1) {
             rb.AddForce(new Vector3(Random.Range(xRange * -1, xRange), Random.Range(yRange/3, yRange)));
             hp.takeDamage(Random.Range(1, 3));
+            cooldown = 0.5f;
         } else if (weapon == 2) {
             if (cooldown <= 0) {
                 hp.takeDamage(5);
-                cooldown = 2f;
+                cooldown = 3f;
             }
         }
     }

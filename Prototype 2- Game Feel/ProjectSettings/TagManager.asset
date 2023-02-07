@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Blade
   - Enemy
+  - SolidArea
   layers:
   - Default
   - TransparentFX

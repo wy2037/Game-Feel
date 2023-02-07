@@ -45,4 +45,6 @@ public class Drag : MonoBehaviour
             transform.localPosition = new Vector2(mousePos.x - startX, mousePos.y - startY);
         }
     }
+
+
 }
