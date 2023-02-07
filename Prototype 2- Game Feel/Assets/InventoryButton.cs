@@ -22,10 +22,10 @@ public class InventoryButton : MonoBehaviour
         pos = transform.position;
         if (isOpened) {
             inventory.SetActive(true);
-            pos.y = Screen.width * openX;
+            pos.x = Screen.width * openX;
         } else {
             inventory.SetActive(false);
-            pos.y = Screen.width * closeX;
+            pos.x = Screen.width * closeX;
         }
         transform.position = pos;
     }

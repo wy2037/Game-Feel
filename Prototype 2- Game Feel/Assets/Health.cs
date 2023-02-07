@@ -6,7 +6,6 @@ public class Health : MonoBehaviour
     [SerializeField]
     private float maxHealth, respawnTimer;
     private float currentHealth;
-    public HealthBar bar;
 
     void Start()
     {
