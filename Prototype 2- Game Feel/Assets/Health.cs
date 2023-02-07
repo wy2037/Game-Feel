@@ -4,12 +4,12 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private float maxHealth, respawnTimer;
-    private float currentHealth;
+    private int maxHealth, respawnTimer;
+    [SerializeField]
+    private int currentHealth;
 
     void Start()
     {
-        // Player starts at full health
         currentHealth = maxHealth;
     }
 
@@ -24,5 +24,10 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0f) {
             Invoke("Respawn", respawnTimer);
         }
+    }
+
+    void Respawn()
+    {
+        Debug.Log("test");
     }
 }
