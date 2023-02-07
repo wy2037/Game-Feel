@@ -9,8 +9,9 @@ public class Hit : MonoBehaviour
     [SerializeField]
     private float xRange, yRange;
     private float cooldown = 0f;
-    public GameObject blade, bomb;
-    public int weapon, bombCount = 0;
+    public GameObject blade;
+    public int weapon;
+    public Camera cam;
     public Health hp;
 
     void Start() {
@@ -20,11 +21,6 @@ public class Hit : MonoBehaviour
     void Update() {
         if (weapon == 3) {
             blade.SetActive(true);
-        } else if (weapon == 4) {
-            blade.SetActive(false);
-                if(Input.GetMouseButtonDown(0) && bombCount < 3) {
-                    bombCount += 1;
-                }
         } else {
             blade.SetActive(false);
         }
@@ -39,10 +35,11 @@ public class Hit : MonoBehaviour
         if (weapon == 1) {
             rb.AddForce(new Vector3(Random.Range(xRange * -1, xRange), Random.Range(yRange/3, yRange)));
             hp.takeDamage(Random.Range(1, 3));
+            cooldown = 0.5f;
         } else if (weapon == 2) {
             if (cooldown <= 0) {
                 hp.takeDamage(5);
-                cooldown = 2f;
+                cooldown = 3f;
             }
         }
     }

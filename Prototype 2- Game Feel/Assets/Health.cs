@@ -20,14 +20,20 @@ public class Health : MonoBehaviour
 
     void FixedUpdate()
     {
-        //bar.UpdateHealthBar(maxHealth, currentHealth);
         if (currentHealth <= 0f) {
             Invoke("Respawn", respawnTimer);
+        }
+
+        if (transform.position.y < -10f || transform.position.y > 5f || Mathf.Abs(transform.position.x) > 15f) {
+            Respawn();
         }
     }
 
     void Respawn()
     {
-        Debug.Log("test");
+        transform.position = new Vector3(0, 0, 0);
+        if (currentHealth <= 0f) {
+            currentHealth = maxHealth;
+        }
     }
 }
