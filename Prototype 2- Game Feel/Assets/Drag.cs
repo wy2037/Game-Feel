@@ -8,6 +8,9 @@ public class Drag : MonoBehaviour
     
     private float startX;
     private float startY;
+
+    [SerializeField]
+    private float minX, minY, maxX, maxY;
     
     private bool isDragged = false;
 
@@ -34,9 +37,12 @@ public class Drag : MonoBehaviour
     }
     
     public void DragObject() {
-        Vector2 mousePos = Input.mousePosition;
-        
-        mousePos = cam.ScreenToWorldPoint(mousePos);
-        transform.localPosition = new Vector2(mousePos.x - startX, mousePos.y - startY);
+        if (minX < transform.localPosition.x && transform.localPosition.x < maxX && transform.localPosition.y < maxY && transform.localPosition.y > minY) {
+            Vector2 mousePos = Input.mousePosition;
+            
+            mousePos = cam.ScreenToWorldPoint(mousePos);
+
+            transform.localPosition = new Vector2(mousePos.x - startX, mousePos.y - startY);
+        }
     }
 }

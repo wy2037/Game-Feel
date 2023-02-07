@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
 
     void FixedUpdate()
     {
-        bar.UpdateHealthBar(maxHealth, currentHealth);
+        //bar.UpdateHealthBar(maxHealth, currentHealth);
         if (currentHealth <= 0f) {
             Invoke("Respawn", respawnTimer);
         }
