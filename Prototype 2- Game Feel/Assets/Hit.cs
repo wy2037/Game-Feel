@@ -9,8 +9,9 @@ public class Hit : MonoBehaviour
     [SerializeField]
     private float xRange, yRange;
     private float cooldown = 0f;
-    public GameObject blade, bomb;
-    public int weapon, bombCount = 0;
+    public GameObject blade;
+    public int weapon;
+    public Camera cam;
     public Health hp;
 
     void Start() {
@@ -20,11 +21,6 @@ public class Hit : MonoBehaviour
     void Update() {
         if (weapon == 3) {
             blade.SetActive(true);
-        } else if (weapon == 4) {
-            blade.SetActive(false);
-                if(Input.GetMouseButtonDown(0) && bombCount < 3) {
-                    bombCount += 1;
-                }
         } else {
             blade.SetActive(false);
         }
