@@ -7,6 +7,9 @@ public class Health : MonoBehaviour
     private int maxHealth, respawnTimer;
     [SerializeField]
     private int currentHealth;
+    public GameObject smallEffect;
+    public GameObject mediumEffect;
+    public GameObject largeEffect;
 
     void Start()
     {
@@ -16,11 +19,21 @@ public class Health : MonoBehaviour
     public void takeDamage(int damage)
     {
         currentHealth -= damage;
+        if (damage > 0 && damage < 15) {
+            Instantiate(smallEffect, transform.position, Quaternion.identity);
+        } else {
+            Instantiate(mediumEffect, transform.position, Quaternion.identity);
+        }
     }
 
     void FixedUpdate()
     {
         if (currentHealth <= 0f) {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            Instantiate(largeEffect, transform.position, Quaternion.identity);
+            currentHealth = 100;
             Invoke("Respawn", respawnTimer);
         }
 
@@ -32,7 +45,10 @@ public class Health : MonoBehaviour
     void Respawn()
     {
         transform.position = new Vector3(0, 0, 0);
-        if (currentHealth <= 0f) {
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        gameObject.GetComponent<Collider2D>().enabled = true;
+        if (currentHealth <= 0) {
             currentHealth = maxHealth;
         }
     }

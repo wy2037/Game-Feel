@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1067465104363267730}
   - component: {fileID: 1067465104363267731}
   - component: {fileID: 1067465104363267728}
+  - component: {fileID: -8899955000447387727}
   m_Layer: 0
   m_Name: Large Damage
   m_TagString: Untagged
@@ -116,8 +117,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.5
-      minScalar: 1
+      scalar: 10
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -977,8 +978,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 3
-        scalar: 60
-        minScalar: 50
+        scalar: 200
+        minScalar: 100
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -4870,3 +4871,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-8899955000447387727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067465104363267729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c5989e1ea834ea1a2cd4a056a9b1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 3
