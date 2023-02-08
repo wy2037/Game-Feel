@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6332368061684307945}
   - component: {fileID: 6332368061684307944}
+  - component: {fileID: -2226685860772751552}
   m_Layer: 0
   m_Name: Splash
-  m_TagString: Untagged
+  m_TagString: Splash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &-2226685860772751552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332368061684307951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c5989e1ea834ea1a2cd4a056a9b1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
