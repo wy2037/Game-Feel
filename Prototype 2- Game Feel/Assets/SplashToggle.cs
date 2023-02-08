@@ -19,8 +19,4 @@ public class SplashToggle : MonoBehaviour
             }
         }
     }
-
-    public void changeToggle() {
-        Debug.Log(enemy.splashToggle);
-    }
 }
