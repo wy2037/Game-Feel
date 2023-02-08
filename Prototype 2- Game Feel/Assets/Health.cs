@@ -33,7 +33,9 @@ public class Health : MonoBehaviour
         } else {
             Instantiate(mediumEffect, transform.position, Quaternion.identity);
         }
-        source.PlayOneShot(clips[0]);
+        if (currentHealth > 0) {
+            source.PlayOneShot(clips[0]);
+        }
     }
 
     void FixedUpdate()
