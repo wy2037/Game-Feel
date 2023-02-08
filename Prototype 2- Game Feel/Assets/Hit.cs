@@ -14,6 +14,11 @@ public class Hit : MonoBehaviour
     public Camera cam;
     public Health hp;
 
+    [SerializeField]
+    private AudioSource source;
+    [SerializeField]
+    private AudioClip[] clips;
+
     void Start() {
         weapon = 1;
     }
@@ -36,10 +41,12 @@ public class Hit : MonoBehaviour
             rb.AddForce(new Vector3(Random.Range(xRange * -1, xRange), Random.Range(yRange/3, yRange)));
             hp.takeDamage(Random.Range(1, 3));
             cooldown = 0.5f;
+            source.PlayOneShot(clips[Random.Range(0,4)]);
         } else if (weapon == 2) {
             if (cooldown <= 0) {
                 hp.takeDamage(5);
                 cooldown = 3f;
+                source.PlayOneShot(clips[4]);
             }
         }
     }
