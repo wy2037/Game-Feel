@@ -11,7 +11,8 @@ public class Health : MonoBehaviour
     public GameObject mediumEffect;
     public GameObject largeEffect;
     public GameObject[] splash;
-    public bool splashToggle = true;
+    public bool splashToggle;
+    public bool particleToggle;
     public int respawnTimer;
     private int rand;
     public Shake camera;
@@ -29,10 +30,12 @@ public class Health : MonoBehaviour
     public void takeDamage(int damage)
     {
         currentHealth -= damage;
-        if (damage > 0 && damage < 15) {
-            Instantiate(smallEffect, transform.position, Quaternion.identity);
-        } else {
-            Instantiate(mediumEffect, transform.position, Quaternion.identity);
+        if (particleToggle) {
+            if (damage > 0 && damage < 15) {
+                Instantiate(smallEffect, transform.position, Quaternion.identity);
+            } else {
+                Instantiate(mediumEffect, transform.position, Quaternion.identity);
+            }
         }
         if (currentHealth > 0) {
             source.PlayOneShot(clips[0]);
@@ -47,7 +50,9 @@ public class Health : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             gameObject.GetComponent<Collider2D>().enabled = false;
             camera.start = true;
-            Instantiate(largeEffect, transform.position, Quaternion.identity);
+            if (particleToggle) {
+                Instantiate(largeEffect, transform.position, Quaternion.identity);
+            }
             if (splashToggle == true) {
                 rand = Random.Range(1, 3);
                 Instantiate(splash[rand], transform.position, Quaternion.identity);
