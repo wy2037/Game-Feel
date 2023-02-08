@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     public GameObject[] splash;
     public bool splashToggle = true;
     private int rand;
+    public Shake camera;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class Health : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             gameObject.GetComponent<Collider2D>().enabled = false;
+            camera.start = true;
             Instantiate(largeEffect, transform.position, Quaternion.identity);
             if (splashToggle = true) {
                 rand = Random.Range(1, 3);
