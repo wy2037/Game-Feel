@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class Lifetime : MonoBehaviour
 {
-    [SerializeField]
-    float timer;
-
-    void Update()
+    public void Clean()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0) {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

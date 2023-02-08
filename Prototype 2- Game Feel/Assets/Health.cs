@@ -10,6 +10,15 @@ public class Health : MonoBehaviour
     public GameObject smallEffect;
     public GameObject mediumEffect;
     public GameObject largeEffect;
+    public GameObject[] splash;
+    public bool splashToggle = true;
+    private int rand;
+    public Shake camera;
+
+    [SerializeField]
+    private AudioSource source;
+    [SerializeField]
+    private AudioClip[] clips;
 
     void Start()
     {
@@ -24,15 +33,24 @@ public class Health : MonoBehaviour
         } else {
             Instantiate(mediumEffect, transform.position, Quaternion.identity);
         }
+        if (currentHealth > 0) {
+            source.PlayOneShot(clips[0]);
+        }
     }
 
     void FixedUpdate()
     {
         if (currentHealth <= 0f) {
+            source.PlayOneShot(clips[1]);
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             gameObject.GetComponent<Collider2D>().enabled = false;
+            camera.start = true;
             Instantiate(largeEffect, transform.position, Quaternion.identity);
+            if (splashToggle == true) {
+                rand = Random.Range(1, 3);
+                Instantiate(splash[rand], transform.position, Quaternion.identity);
+            }
             currentHealth = 100;
             Invoke("Respawn", respawnTimer);
         }

@@ -8,6 +8,11 @@ public class Blade : MonoBehaviour
     public Camera cam;
     public GameObject bladeTrail;
 
+    [SerializeField]
+    private AudioSource source;
+    [SerializeField]
+    private AudioClip clip;
+
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +22,7 @@ public class Blade : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Enemy") {
             other.GetComponent<Health>().takeDamage(100);
+            source.PlayOneShot(clip);
         }
     }
 }
