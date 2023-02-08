@@ -603,6 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 389212719}
   - component: {fileID: 389212720}
+  - component: {fileID: 389212721}
   m_Layer: 5
   m_Name: ShakeToggle
   m_TagString: Untagged
@@ -681,6 +682,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &389212721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389212718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3497a1e2a133f47e09ad9870ec03441c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraShake: {fileID: 519420033}
+  thisToggle: {fileID: 389212720}
 --- !u!1 &426932188
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: 0
+  shakeToggle: 0
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1141,6 +1157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750603400}
   - component: {fileID: 750603401}
+  - component: {fileID: 750603402}
   m_Layer: 5
   m_Name: RespawnToggle
   m_TagString: Untagged
@@ -1218,7 +1235,21 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
+--- !u!114 &750603402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750603399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f3f2a77e7e74460196fb76f2933a574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1668333116}
+  thisToggle: {fileID: 750603401}
 --- !u!1 &781638107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,7 +1582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &907248764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2590,6 +2621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1212384106}
   - component: {fileID: 1212384107}
+  - component: {fileID: 1212384108}
   m_Layer: 5
   m_Name: ParticleToggle
   m_TagString: Untagged
@@ -2668,6 +2700,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &1212384108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212384105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8c35d8b457f4d9c8b586d30e0498a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 1668333116}
+  thisToggle: {fileID: 1212384107}
 --- !u!1 &1232610207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4007,7 +4053,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  respawnTimer: 5
   currentHealth: 0
   smallEffect: {fileID: 1362177214172247503, guid: ca13eef03e91c46cabfc7315e88c232f, type: 3}
   mediumEffect: {fileID: 992136431691175178, guid: 800fb119ca8be4b61807cdbbebaf15a0, type: 3}
@@ -4017,6 +4062,8 @@ MonoBehaviour:
   - {fileID: 417516523923430791, guid: 278ed687de5e54a96b04e5a39c7a8bc9, type: 3}
   - {fileID: 3887097167516675181, guid: 98320ca2e3f79445389ab408a0ea2967, type: 3}
   splashToggle: 1
+  particleToggle: 0
+  respawnTimer: 5
   camera: {fileID: 519420033}
   source: {fileID: 1668333119}
   clips:
@@ -4742,19 +4789,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1837530122}
-        m_TargetAssemblyTypeName: SplashToggle, Assembly-CSharp
-        m_MethodName: changeToggle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 1
 --- !u!1 &1859079557
 GameObject:
