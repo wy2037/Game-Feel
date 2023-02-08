@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private int maxHealth, respawnTimer;
+    private int maxHealth;
     [SerializeField]
     private int currentHealth;
     public GameObject smallEffect;
@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     public GameObject largeEffect;
     public GameObject[] splash;
     public bool splashToggle = true;
+    public int respawnTimer;
     private int rand;
     public Shake camera;
 

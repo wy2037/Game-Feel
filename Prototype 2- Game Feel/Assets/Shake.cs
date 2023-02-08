@@ -5,13 +5,14 @@ using UnityEngine;
 public class Shake : MonoBehaviour
 {
     public bool start = false;
+    public bool shakeToggle;
     public AnimationCurve curve;
     public float duration = 1f;
 
     // Update is called once per frame
     void Update()
     {
-        if (start) {
+        if (start && shakeToggle) {
             start = false;
             StartCoroutine(Shaking());
         }
