@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     public int respawnTimer;
     private int rand;
     public Shake camera;
+    public CoinSystem coins;
 
     [SerializeField]
     private AudioSource source;
@@ -29,6 +30,7 @@ public class Health : MonoBehaviour
 
     public void takeDamage(int damage)
     {
+        coins.GainCoins(damage);
         currentHealth -= damage;
         if (particleToggle) {
             if (damage > 0 && damage < 15) {
@@ -50,6 +52,7 @@ public class Health : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             gameObject.GetComponent<Collider2D>().enabled = false;
             camera.start = true;
+            coins.GainCoins(Random.Range(20, 30));
             if (particleToggle) {
                 Instantiate(largeEffect, transform.position, Quaternion.identity);
             }

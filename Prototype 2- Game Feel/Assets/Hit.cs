@@ -44,7 +44,7 @@ public class Hit : MonoBehaviour
             source.PlayOneShot(clips[Random.Range(0,3)]);
         } else if (weapon == 2) {
             if (cooldown <= 0) {
-                hp.takeDamage(5);
+                hp.takeDamage(Random.Range(40,60));
                 cooldown = 3f;
                 source.PlayOneShot(clips[3]);
             }
