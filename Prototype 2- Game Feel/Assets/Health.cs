@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     public GameObject smallEffect;
     public GameObject mediumEffect;
     public GameObject largeEffect;
+    public GameObject[] splash;
+    private int rand;
 
     void Start()
     {
@@ -33,6 +35,8 @@ public class Health : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
             gameObject.GetComponent<Collider2D>().enabled = false;
             Instantiate(largeEffect, transform.position, Quaternion.identity);
+            rand = Random.Range(1, 3);
+            Instantiate(splash[rand], transform.position, Quaternion.identity);
             currentHealth = 100;
             Invoke("Respawn", respawnTimer);
         }

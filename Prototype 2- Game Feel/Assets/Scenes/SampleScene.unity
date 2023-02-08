@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 605437610}
   - component: {fileID: 605437609}
   - component: {fileID: 605437608}
+  - component: {fileID: 605437611}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -577,6 +578,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!331 &605437611
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605437607}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_MaskAlphaCutoff: 0.2
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &781638107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +1962,10 @@ MonoBehaviour:
   smallEffect: {fileID: 1362177214172247503, guid: ca13eef03e91c46cabfc7315e88c232f, type: 3}
   mediumEffect: {fileID: 992136431691175178, guid: 800fb119ca8be4b61807cdbbebaf15a0, type: 3}
   largeEffect: {fileID: 1067465104363267729, guid: 78110fca894c84b92a6ae42b98315120, type: 3}
+  splash:
+  - {fileID: 6332368061684307951, guid: ebb5035e1968b42c396edd8c62067e8b, type: 3}
+  - {fileID: 417516523923430791, guid: 278ed687de5e54a96b04e5a39c7a8bc9, type: 3}
+  - {fileID: 3887097167516675181, guid: 98320ca2e3f79445389ab408a0ea2967, type: 3}
 --- !u!114 &1668333117
 MonoBehaviour:
   m_ObjectHideFlags: 0
